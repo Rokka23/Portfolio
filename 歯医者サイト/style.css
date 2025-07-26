@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+/* ========================================
+    リセットcss
+========================================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style:normal;
+	font-weight: normal;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html{overflow-y: scroll;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: ''; content: none;}
+input, textarea{margin: 0; padding: 0;}
+ol, ul{list-style:none;}
+table{border-collapse: collapse; border-spacing:0;}
+caption, th{text-align: left;}
+a:focus {outline:none;}
+
+
+/* ========================================
+	フロートの解除
+========================================= */
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+
+
+/* ========================================
+	全体設計
+========================================= */
+body {
+	color:#555;
+	font-size: 14px;
+	line-height: 1;
+	font-family: "メイリオ", Meiryo;
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ========================================
+	ラッパー
+========================================= */
+div#wrapper {
+	width: 960px;
+	height: auto;
+	margin: 0 auto;
+}
+
+
+/* ========================================
+	ヘッダー
+========================================= */
+header {
+	width: 960px;
+	height: 99px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+	float: left;
+	
+}
+
+header img {
+	width: auto;
+	height: 45px;
+	display: block;
+	margin: 0;
+	margin-top: 20px;
+}
+
+nav {
+	float: right;
+	margin-top: 56px;
+   
+}
+
+
+nav ul li {
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+nav ul li a {
+	color: #3b6a75;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+
+/* ========================================
+	メイン画像
+========================================= */
+div#mainimage {
+	width: 960px;
+	height: 300px;
+	margin-bottom: 30px;
+
+}
+
+
+/* ========================================
+	レフト
+========================================= */
+div#left {
+	width: 280px;
+	height: auto;
+	float: left;
+	margin-right:30px;
+}
+
+div#left ul li {
+	width: 278px;
+	height: 48px;
+	background-color: #d8f2f8;
+	margin-bottom: 10px;
+	border: 1px solid #3b6a75;
+}
+
+div#left ul li a {
+	font-size: 16px;
+	font-weight: bold;
+	color: #555555;
+	text-decoration: none;
+	line-height: 50px;
+	padding-left: 60px;
+	display: block;
+}
+
+a#icon_lamp {
+	background:url(images/lamp.png) no-repeat 14px center;
+	background-size: 30px 30px;
+}
+
+a#icon_reserve {
+	background:url(images/reserve.png) no-repeat 14px center;
+	background-size: 30px 30px;
+}
+
+a#icon_access {
+	background:url(images/access.png) no-repeat 14px center;
+	background-size: 25px 30px;
+}
+
+
+
+/* ========================================
+	ライト
+========================================= */
+div#right {
+	width: 650px;
+	height: auto;
+	float: left;
+}
+
+div#right h2 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #555555;
+	margin-bottom: 15px;
+}
+
+div#right dt {
+	font-size: 12px;
+	color: #a8a8a8;
+	float: left;
+	width: 79px;
+	line-height: 40px;
+	padding-left: 15px;
+}
+
+div#right dd {
+	font-size: 13px;
+	color: #555555;
+	float: left;
+	width: 556px;
+	line-height: 40px;
+}
+
+div#right dt:nth-of-type(odd),div#right dd:nth-of-type(odd) {
+	background-color: #f5f5f5;
+}
+
+div.clearfix {
+	clear:both;
+}
+
+
+/* ========================================
+	フッター
+========================================= */
+footer {
+	width: 100%;
+	background-color: #3b6a75;
+	margin-top: 50px;
+}
+
+footer img {
+	width: auto;
+	height: 45px;
+	display: block;
+}
+
+div#footer_inner {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+	padding: 20px 20px 0;
+
+	display: flex;              /* ← フレックスに統一 */
+	align-items: center;        /* ← 上下中央揃え */
+	justify-content: space-between;  /* ← ロゴとリストを左右に分ける */
+	height: 100px;
+}
+
+/* ロゴ部分 */
+#footer_logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;  /* ← 横方向に左揃え */
+}
+
+/* リスト全体（右側） */
+footer ul {
+	display: flex;
+	gap: 20px;        /* ← li の間にスペース */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* 各リンク */
+footer ul li a {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 45px;  /* 高さ合わせ */
+}
+
+/* ページトップボタン */
+p#pagetop a {
+	width: 78px;
+	height: 20px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	line-height: 20px;
+	position: absolute;
+	top: -20px;
+	right: 0;
+	background-color: #3b6a75;
+}
